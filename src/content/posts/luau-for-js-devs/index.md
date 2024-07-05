@@ -1,7 +1,7 @@
 ---
 title: Luau for JS Devs
 published: 2024-07-05
-description: 'An introduction to a superior alternative to JavaScript: Luau'
+description: 'An introduction to Luau for JavaScript developers'
 image: 'https://github.com/luau-lang.png'
 tags: ['tooling', 'languages', 'web-development', 'luau', 'javascript']
 category: 'Languages'

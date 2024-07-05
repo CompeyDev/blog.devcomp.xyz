@@ -1,7 +1,9 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
   "extends": [],
-  "files": { "ignoreUnknown": true },
+  "files": {
+    "ignoreUnknown": true
+  },
   "organizeImports": {
     "enabled": true
   },
@@ -17,16 +19,20 @@
     "parser": {
       "unsafeParameterDecoratorsEnabled": true
     },
+    "globals": [
+      "Astro"
+    ],
     "formatter": {
-      "quoteStyle": "single",
-      "jsxQuoteStyle": "single",
-      "trailingComma": "all",
-      "semicolons": "asNeeded",
+      "quoteStyle": "double",
+      "jsxQuoteStyle": "double",
+      "semicolons": "always",
       "arrowParentheses": "asNeeded"
     }
   },
   "json": {
-    "parser": { "allowComments": true },
+    "parser": {
+      "allowComments": true
+    },
     "formatter": {
       "enabled": true,
       "indentStyle": "space",
@@ -41,7 +47,8 @@
         "recommended": true
       },
       "complexity": {
-        "recommended": true
+        "recommended": true,
+        "noForEach": "off"
       },
       "correctness": {
         "recommended": true
@@ -53,14 +60,32 @@
         "recommended": true
       },
       "style": {
-        "recommended": true
+        "recommended": true,
+        "noParameterAssign": "off",
+        "useNodejsImportProtocol": "off"
       },
       "suspicious": {
-        "recommended": true
+        "recommended": true,
+        "noExplicitAny": "off"
       },
       "nursery": {
         "recommended": true
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": [
+        "*.svelte",
+        "*.astro"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off"
+          }
+        }
+      }
+    }
+  ]
 }

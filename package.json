@@ -1,5 +1,5 @@
 {
-  "name": "fuwari",
+  "name": "blog.devcomp.xyz",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,8 +9,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "new-post": "node scripts/new-post.js",
-    "format": "biome format --write ./src",
-    "lint": "biome check --apply ./src"
+    "fmt": "biome format --write ./src",
+    "lint": "biome check ./src"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
