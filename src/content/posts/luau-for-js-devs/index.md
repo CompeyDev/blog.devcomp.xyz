@@ -48,7 +48,7 @@ type ExcludeTypes<T> = ~T
 
 ### Performance
 
-There’s been a lot of talk about [Bun](https://bun.sh), a fast and modern JavaScript runtime for the serverside. Luau can often outperform Bun. I’m not one of believe in benchmarks, but a naive one would look like this:
+There’s been a lot of talk about [Bun](https://bun.sh), a fast and modern JavaScript runtime for the serverside. Luau can often outperform Bun. I’m not one to believe in benchmarks, but a naive one would look like this:
 
 ![alt_text](./lune_bench.png "A benchmark of a SHA-256 implementation in Lune and Bun")
 
