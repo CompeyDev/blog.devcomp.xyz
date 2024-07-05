@@ -8,6 +8,8 @@ category: 'Languages'
 draft: true 
 ---
 
+<!-- markdownlint-disable MD033 -->
+
 Have you ever felt that you live in a loop? That’s how I feel - every time I open tech twitter (no, I am not going to call it X). There are several “programming meme” accounts which seem to regurgitate the same few jokes on a regular basis, to the point that I’m convinced they’re all AI. One of these overused meme formats is related to JavaScript, criticising its poor design choices which lead to various pitfalls a developer can face. I’ve never seen people offer solutions to these, so this blog post attempts to do so with a promising alternative to JavaScript: [Luau]([https://luau-lang.org](https://luau-lang.org)).
 
 ## What is Luau?
