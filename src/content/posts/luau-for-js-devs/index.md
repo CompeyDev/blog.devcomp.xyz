@@ -37,7 +37,7 @@ I will mostly be speaking about TypeScript, since I have more experience with it
 
 Both of these problems aren’t existent in Luau. In Luau, types are simple by design, while also providing sweet autocomplete and strong typechecking - adhering to the Lua philosophy of power through simplicity. Community-made tooling also tries to stick to this philosophy, leading to a strong competition to JavaScript in terms simplicity, which many prefer the language for.
 
-A simple example of this in Luau types is this following generic type for excluding a type from a list of compatible ones:
+A simple example of this in Luau types is this following which satisfies all types other than a specified one:
 
 ```ts
 type ExcludeTypes<T, U> = T extends U ? never : T;
