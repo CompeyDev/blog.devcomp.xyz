@@ -55,13 +55,13 @@ The above type example isn’t available in stable Luau yet, and is a part of th
 
 There’s been a lot of talk about [Bun](https://bun.sh), a fast and modern JavaScript runtime for the serverside. Luau can often outperform Bun. I’m not one to believe in benchmarks, but a naive one would look like this:
 
-![alt_text](./lune_bench.png "A benchmark of a SHA-256 implementation in Lune and Bun")
+![lune crypto benchmark](./lune_bench.png "A benchmark of a SHA-256 implementation in Lune and Bun")
 
 For the Luau script, I’m using [Lune](https://github.com/lune-org/lune) as the runtime (Lune is similar to what Node accomplishes for JavaScript, it’s a script runtime with a well-designed standard library of APIs and other features) and [luau-hashing](https://github.com/dekkonot/luau-hashing) for the SHA-256 implementation. For Bun, I’m using their native crypto APIs. Lune is faster than Bun by **5 orders of magnitude**, and the benchmark is rigged against Lune, since we’re comparing a pure Luau implementation to a native zig API.
 
-The [Lynx](https://lynx.land) web framework for Lune is nearly **3 times faster** than Express on Node.
+The [Lynx](https://lynx.land) web framework for Lune is **3 times faster** than Express on Node.
 
-[Insert Screenshot Here]
+![lynx benchmark](./lynx_bench.png "A benchmark of a Lynx webserver running on Lune")
 
 ### Libraries and Ecosystem
 
@@ -78,7 +78,7 @@ Luau has a rapidly evolving community of developers, many of them creating aweso
 
 ### Libraries
 
-The Luau community has developed many libraries to make JavaScript developers feel at home! These include everything from Promise recreations, to entire ports of popular JavaScript libraries. To make the transition easier, there’s also a [set of polyfills for common JS APIs](https://github.com/jsdotlua/luau-polyfill). Following are some libraries to try out in Luau:
+The Luau community has developed many libraries to make JavaScript developers feel at home! These include everything from Promise recreations, to entire ports of popular JavaScript libraries. To make the transition easier, there’s also a [set of polyfills for commonly used JS APIs](https://github.com/jsdotlua/luau-polyfill). Following are some libraries to try out in Luau:
 
 1. ::github{repo="jsdotlua/jest-lua"}
 2. ::github{repo="jsdotlua/react-lua"}
