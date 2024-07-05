@@ -2,10 +2,10 @@
 title: Luau for JS Devs
 published: 2024-07-05
 description: 'An introduction to Luau for JavaScript developers'
-image: 'https://github.com/luau-lang.png'
+image: './cover.png'
 tags: ['tooling', 'languages', 'web-development', 'luau', 'javascript']
 category: 'Languages'
-draft: true 
+draft: false
 ---
 
 <!-- markdownlint-disable MD033 -->
@@ -14,7 +14,7 @@ Have you ever felt that you live in a loop? That’s how I feel - every time I o
 
 ## What is Luau?
 
-Luau is a Lua derivative, which is fast, small and gradually typed, as described on their website. Luau was created at Roblox as a scalable alternative to Lua to run millions of times a day, on both the client and server. Luau has generally been pushed aside as a “lego game language”, simply due to the notoriety of inexperienced programmers within the Roblox community. Luau’s potential as a well-designed scripting language often goes unnoticed. In this blog post, I will attempt to compare Luau with JavaScript on the server (Node/Bun/Deno).
+Luau is a Lua derivative, which is fast, small and gradually typed, as described on their website. Luau was created at Roblox as a scalable alternative to Lua to run millions of times a day, on both clients and servers. It has generally been pushed aside as a “lego game language”, simply due to its ties to the Roblox platform, as Roblox has generally been tied to inexperienced and young game developers. Luau’s potential as a well-designed scripting language often goes unnoticed. In this blog post, I will attempt to compare Luau with JavaScript and hopefully showcase some of the benefits of Luau.
 
 Luau has significantly diverged from Lua, with many performance improvements (including a separate bytecode format and compiler), type support, standard APIs like buffers, require aliases, and a lot more. Furthermore, Lua generally follows the ideology of “if it can be implemented in pure-lua, it should be, and doesn’t belong within the standard library”, which Luau does not follow much.
 

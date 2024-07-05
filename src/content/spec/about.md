@@ -9,13 +9,3 @@
 
 ![Systems](https://skillicons.dev/icons?i=rust,go,java,lua,bash,neovim,linux,docker&perline=10)
 ![Web](https://skillicons.dev/icons?i=html,css,js,ts,prisma,mysql,nextjs,vercel&perline=10)
-
-## Contact
-
-If you would like to get in touch with me, reach out to me via:
-
-- Discord - DevComp
-- Twitter - [@DevComp_](https://twitter.com/DevComp_)
-- Email - [mailto:hi@devcomp.xyz](hi@devcomp.xyz)
-
-[![Hits](https://hits-app.vercel.app/hits?url=https://github.com/CompeyDev&bgLeft=cba6f7&bgRight=1e1e2e&label=visits)](https://hits-app.vercel.app/)
