@@ -86,7 +86,7 @@ The Luau community has developed many libraries to make JavaScript developers fe
 4. ::github{repo="seaofvoices/luau-path"}
 5. ::github{repo="nicell/lynx"}
 
-…And many more which I haven't listed here!
+…and many more which I haven't listed here!
 
 :::note
 It isn't currently possible for create websites using react-lua, it is currently only used for
