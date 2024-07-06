@@ -22,9 +22,10 @@ interface Props {
   title: string;
   banner: string;
   description?: string;
+  cover?: string;
 }
 
-let { title, banner, description } = Astro.props;
+let { title, banner, description, cover } = Astro.props;
 
 const isHomePage = pathsEqual(Astro.url.pathname, "/");
 
@@ -56,11 +57,11 @@ const myFade = {
 // why doing this in Layout instead of GlobalStyles: https://github.com/withastro/astro/issues/6728#issuecomment-1502203757
 const configHue = siteConfig.themeColor.hue;
 if (!banner || typeof banner !== "string" || banner.trim() === "") {
-  banner = siteConfig.banner.src;
+  banner = cover ?? siteConfig.banner.src;
 }
 
 // TODO don't use post cover as banner for now
-banner = siteConfig.banner.src;
+// banner = siteConfig.banner.src;
 
 const enableBanner = siteConfig.banner.enable;
 
@@ -91,6 +92,7 @@ const siteLang = siteConfig.lang.replace("_", "-");
 		<meta property="og:url" content={Astro.url}>
 		<meta property="og:title" content={pageTitle}>
 		<meta property="og:description" content={description || pageTitle}>
+		<meta property="og:image" content={banner}>
 
 		<meta name="twitter:card" content="summary_large_image">
 		<meta property="twitter:url" content={Astro.url}>
