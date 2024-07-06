@@ -6,7 +6,7 @@
     "prepare": "npmluau",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && pagefind --site dist",
+    "build": "COMMIT_HASH=`git rev-parse --short HEAD` astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "new-post": "lune run new-post",
