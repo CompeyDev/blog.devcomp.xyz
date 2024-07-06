@@ -21,7 +21,7 @@ Luau has significantly diverged from Lua, with many performance improvements (in
 Compared to JavaScript, Luau does not face most of its well-documented pitfalls – see [wtfjs](https://github.com/denysdovhan/wtfjs). This is mainly because Luau inherits a lot of Lua’s good design decisions such as:
 
 * No two different types can be equal
-* Type coercion isn’t a thing, types must be converted explicitly
+* Type coercion is rare and mostly sane (it usually behaves how you would expect it to)
 * Arithmetic and non-arithmetic operators aren’t of the same syntax
 * Practically only one data type: the table, which can be used to implement virtually anything
 * No semicolons or indents required!
