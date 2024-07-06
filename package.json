@@ -63,7 +63,8 @@
     "npmluau": "^0.1.1",
     "remark-github-admonitions-to-directives": "^1.0.5",
     "sass": "^1.77.6",
-    "stylus": "^0.63.0"
+    "stylus": "^0.63.0",
+    "vercel": "^34.3.0"
   },
   "pnpm": {
     "overrides": {
