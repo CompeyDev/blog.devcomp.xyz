@@ -46,12 +46,22 @@ export const profileConfig: ProfileConfig = {
     {
       name: "GitHub",
       icon: "fa6-brands:github",
-      url: "https://github.com/CompeyDeve",
+      url: "https://github.com/CompeyDev",
     },
     {
       name: "Twitter",
       icon: "fa6-brands:twitter",
       url: "https://twitter.com/DevComp_",
+    },
+    {
+      name: "Mastodon",
+      icon: "fa6-brands:mastodon",
+      url: "https://mas.to/@DevComp",
+    },
+    {
+      name: "Spotify",
+      icon: "fa6-brands:spotify",
+      url: "https://open.spotify.com/user/ouauk3ftumdwxokxn5jxb5kxw",
     },
   ],
 };
