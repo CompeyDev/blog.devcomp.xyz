@@ -57,7 +57,7 @@ There’s been a lot of talk about [Bun](https://bun.sh), a fast and modern Java
 
 ![lune crypto benchmark](./lune_bench.png "A benchmark of a SHA-256 implementation in Lune and Bun")
 
-For the Luau script, I’m using [Lune](https://github.com/lune-org/lune) as the runtime (Lune is similar to what Node accomplishes for JavaScript, it’s a script runtime with a well-designed standard library of APIs and other features) and [luau-hashing](https://github.com/dekkonot/luau-hashing) for the SHA-256 implementation. For Bun, I’m using their native crypto APIs. Lune is faster than Bun by **5 orders of magnitude**, and the benchmark is rigged against Lune, since we’re comparing a pure Luau implementation to a native zig API.
+For the Luau script, I’m using [Lune](https://github.com/lune-org/lune) as the runtime (Lune is similar to what Node accomplishes for JavaScript, it’s a script runtime with a well-designed standard library of APIs and other features) and [luau-hashing](https://github.com/dekkonot/luau-hashing) for the SHA-256 implementation. For Bun, I’m using their native crypto APIs. Lune is **5 times faster** than Bun, and the benchmark is rigged against Lune, since we’re comparing a pure Luau implementation to a native zig API.
 
 The [Lynx](https://lynx.land) web framework for Lune is **3 times faster** than Express on Node.
 
