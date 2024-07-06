@@ -35,3 +35,16 @@ export function getDir(path: string): string {
 export function url(path: string) {
   return joinUrl("", import.meta.env.BASE_URL, path);
 }
+
+export function urlIsLocal(path: string): boolean {
+  return !(
+    path.startsWith("/") ||
+    path.startsWith("http") ||
+    path.startsWith("https") ||
+    path.startsWith("data:")
+  );
+}
+
+export function urlIsPublic(path: string): boolean {
+  return path.startsWith("/");
+}

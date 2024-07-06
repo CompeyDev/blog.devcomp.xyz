@@ -9,20 +9,15 @@ interface Props {
 }
 
 import path from "path";
-import { url } from "../../utils/url-utils";
+import { url, urlIsLocal, urlIsPublic } from "../../utils/url-utils";
 
 const { id, src: img, alt, position = "center", basePath = "/" } = Astro.props;
 const className = Astro.props.class;
 
 const src = typeof img === "string" ? img : img.src;
 
-const isLocal = !(
-  src.startsWith("/") ||
-  src.startsWith("http") ||
-  src.startsWith("https") ||
-  src.startsWith("data:")
-);
-// const isPublic = src.startsWith("/");
+const isLocal = urlIsLocal(src);
+const isPublic = urlIsPublic(src);
 
 // TODO temporary workaround for images dynamic import
 // https://github.com/withastro/astro/issues/3373
@@ -43,6 +38,6 @@ const imageStyle = `object-position: ${position}`;
 <div id="image-wrapper" class:list={[className, 'overflow-hidden relative']}>
     <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>
     {isLocal && <img src={optimizedImg!.src} alt={alt || ""} class={imageClass} style={imageStyle}/>}
-    {!isLocal && <img src={url(src)} alt={alt || ""} class={imageClass} style={imageStyle}/>}
+    {!isLocal && <img src={isPublic ? url(src) : src} alt={alt || ""} class={imageClass} style={imageStyle}/>}
 </div>
 
