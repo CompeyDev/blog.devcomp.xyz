@@ -1,4 +1,9 @@
 {
+  "luau-lsp.require.mode": "relativeToFile",
+  "luau-lsp.require.directoryAliases": {
+    "@lune/": "~/.lune/.typedefs/0.8.6/",
+    "@pkg": "node_modules/.luau-aliases"
+  },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "biomejs.biome",
   "[javascript]": {
@@ -16,9 +21,12 @@
   "[svelte]": {
     "editor.defaultFormatter": "biomejs.biome",
   },
+  "[luau]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
   "editor.codeActionsOnSave": {
     "quickfix.biome": "always",
     "source.organizeImports.biome": "always"
   },
-  "frontMatter.dashboard.openOnStart": false
+  "frontMatter.dashboard.openOnStart": false,
 }

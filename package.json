@@ -3,12 +3,13 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "prepare": "npmluau",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
-    "new-post": "node scripts/new-post.js",
+    "new-post": "lune run new-post",
     "fmt": "biome format --write ./src",
     "lint": "biome check ./src"
   },
@@ -58,6 +59,8 @@
     "@types/markdown-it": "^14.1.1",
     "@types/mdast": "^4.0.4",
     "@types/sanitize-html": "^2.11.0",
+    "luau-path": "^0.1.0",
+    "npmluau": "^0.1.1",
     "remark-github-admonitions-to-directives": "^1.0.5",
     "sass": "^1.77.6",
     "stylus": "^0.63.0"

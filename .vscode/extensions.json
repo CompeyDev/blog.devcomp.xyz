@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "biomejs.biome",
+    "JohnnyMorganz.stylua",
+    "JohnnyMorganz.luau-lsp",
     "astro-build.astro-vscode",
     "svelte.svelte-vscode",
     "davidanson.markdownlint"
