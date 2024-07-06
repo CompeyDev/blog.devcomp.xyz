@@ -11,7 +11,8 @@
     "astro": "astro",
     "new-post": "lune run new-post",
     "fmt": "biome format --write ./src",
-    "lint": "biome check ./src"
+    "lint": "biome check ./src",
+    "deploy": "vercel deploy --prod"
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
