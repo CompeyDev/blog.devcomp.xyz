@@ -1,6 +1,6 @@
 ---
 title: Luau for JS Devs
-published: 2024-07-05
+published: 2024-07-05T15:24:32
 description: 'An introduction to Luau for JavaScript developers'
 image: './cover.png'
 tags: ['tooling', 'languages', 'web-development', 'luau', 'javascript']
