@@ -16,6 +16,7 @@ import {
 } from "../constants/constants";
 import { defaultFavicons } from "../constants/icon";
 import type { Favicon } from "../types/config";
+import { hslToHex } from "../utils/color-utils";
 import { url } from "../utils/url-utils";
 
 interface Props {
@@ -101,6 +102,8 @@ const siteLang = siteConfig.lang.replace("_", "-");
 
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content={hslToHex(siteConfig.themeColor.hue, 100, 100)}>
+
 		{favicons.map(favicon => (
 			<link rel="icon"
 				  href={favicon.src.startsWith('/') ? url(favicon.src) : favicon.src}
