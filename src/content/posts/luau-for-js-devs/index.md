@@ -60,21 +60,22 @@ localeFn("en-gb") // TypeError: Argument of type 'string' is not assignable to p
 ```
 
 ```luau
-type function IsStringOfLength(s: string, length: number)
-    if #s ~= length then
+type function IsStringOfLength(s, length)
+    local lenNum = tonumber(len:value())
+    assert(s:is("singleton") and typeof(s:value()) == "string", "s must be of type string")
+    assert(len:is("singleton") and lenNum ~= nil, "len must be of type number")
+
+    if #s:value() ~= lenNum then
         return error("Expected country code to be 2 characters")
     end
 
     return s
 end
 
-type LocaleCountryCode<T> = IsStringOfLength<T, 2>
-local function localeFn<T>(code: LocaleCountryCode<T>)
-    -- Do something
-end
+type LocaleCountryCode<T> = IsStringOfLength<T, "2">
 
-localeFn("gb") -- This is fine
-localeFn("en-gb") -- TypeError: Expected country code to be 2 characters
+local gb: LocaleCountryCode<"gb"> -- This is fine
+local enGb: LocaleCountryCode<"en-gb"> -- TypeError: Expected country code to be 2 characters
 ```
 
 The Luau implementation in the form of a type function is not only more readable and intuitive, it also allows for entirely customizable error diagnostics. Such a pattern is common in Luau's type system design, which emphasizes on types not overshadowing code or requiring a pHD to write due to complexity.
