@@ -37,18 +37,65 @@ I will mostly be speaking about TypeScript, since I have more experience with it
 
 Both of these problems aren’t existent in Luau. In Luau, types are simple by design, while also providing sweet autocomplete and strong typechecking - adhering to the Lua philosophy of power through simplicity. Community-made tooling also tries to stick to this philosophy, leading to a strong competition to JavaScript in terms simplicity, which many prefer the language for.
 
-A simple example of this in Luau types is this following which satisfies all types other than a specified one:
+A simple example of this in Luau types is type functions, as opposed to complicated TypeScript type hacks:
 
+```ts
+// see https://stackoverflow.com/a/73369825
+type LengthOfString<
+  S extends string,
+  Acc extends 0[] = []
+> = S extends `${string}${infer $Rest}`
+  ? LengthOfString<$Rest, [...Acc, 0]>
+  : Acc["length"];
+
+type IsStringOfLength<S extends string, Length extends number> = LengthOfString<S> extends Length ? S : never
+
+type LocaleCountryCode<T extends string> = IsStringOfLength<T, 2>
+function localeFn<T extends string>(code: LocaleCountryCode<T>) {
+    // Do something
+}
+
+localeFn("gb") // This is fine
+localeFn("en-gb") // TypeError: Argument of type 'string' is not assignable to parameter of type 'never'
+```
+
+```luau
+type function IsStringOfLength(s: string, length: number)
+    if #s ~= length then
+        return error("Expected country code to be 2 characters")
+    end
+
+    return s
+end
+
+type LocaleCountryCode<T> = IsStringOfLength<T, 2>
+local function localeFn<T>(code: LocaleCountryCode<T>)
+    -- Do something
+end
+
+localeFn("gb") -- This is fine
+localeFn("en-gb") -- TypeError: Expected country code to be 2 characters
+```
+
+The Luau implementation in the form of a type function is not only more readable and intuitive, it also allows for entirely customizable error diagnostics. Such a pattern is common in Luau's type system design, which emphasizes on types not overshadowing code or requiring a pHD to write due to complexity.
+
+:::note
+The above type example isn’t available in stable Luau yet, and is a part of the experimental [type functions RFC](https://rfcs.luau.org/user-defined-type-functions.html). Type functions are run in a sandboxed "type runtime" which exposes a built-in library for type analysis. Here's an example of what's possible with this type library:
+
+Consider this TypeScript type:
 ```ts
 type ExcludeTypes<T, U> = T extends U ? never : T;
 ```
 
-```lua
-type ExcludeTypes<T> = ~T
-```
+In a Luau type function, this can be simplified to a singular function call from the typelib:
+```luau
+type function ExcludeTypes(type: any)
+    return types.negationof(type)
+end
 
-:::note
-The above type example isn’t available in stable Luau yet, and is a part of the revamped type solver, which is currently in development. It is expected to have a beta release soon.
+-- Potentially in the future, ExcludeTypes can be simplified entirely to `~T` syntax
+-- See https://github.com/luau-lang/rfcs/blob/689bba98817224769480ea5594ba352b6694fb4c/docs/negation-types.md
+```
 :::
 
 ### Performance
@@ -203,6 +250,9 @@ rm -rf staging
 </table>
 
 Not only is the Lune version cross-platform and much easier to read and write, it is also convenient to use, since the bash script requires the user to manually input information.
+
+If none of the above convinces you to try our Luau, maybe Hina (the Luau mascot, a Hawaiian monk seal) would!
+![Hina - The Luau Mascot](https://rfcs.luau.org/mascot.png)
 
 **All I ask you is to try something a little different the next time you start a new side-project, something a little bit more Hawaiian!** :)
 
