@@ -60,7 +60,7 @@ localeFn("en-gb") // TypeError: Argument of type 'string' is not assignable to p
 ```
 
 ```luau
-type function IsStringOfLength(s, length)
+type function IsStringOfLength(s, len)
     local lenNum = tonumber(len:value())
     assert(s:is("singleton") and typeof(s:value()) == "string", "s must be of type string")
     assert(len:is("singleton") and lenNum ~= nil, "len must be of type number")
@@ -137,7 +137,7 @@ The Luau community has developed many libraries to make JavaScript developers fe
 …and many more which I haven't listed here!
 
 :::note
-It isn't currently possible for create websites using react-lua, it is currently only used for
+It isn't currently possible to create websites using react-lua, it is currently only used for
 frontend in Roblox game development; but web compatibility is being worked on.
 :::
 
