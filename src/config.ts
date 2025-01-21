@@ -49,6 +49,11 @@ export const profileConfig: ProfileConfig = {
       url: "https://github.com/CompeyDev",
     },
     {
+      name: "Bluesky",
+      icon: "fa6-brands:bluesky",
+      url: "https://bsky.app/profile/did:plc:scj5gj42nipcyihvu3hbt4fd",
+    },
+    {
       name: "Twitter",
       icon: "fa6-brands:twitter",
       url: "https://twitter.com/DevComp_",
