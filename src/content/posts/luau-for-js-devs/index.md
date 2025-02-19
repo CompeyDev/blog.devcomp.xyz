@@ -109,6 +109,10 @@ For the Luau script, I’m using [Lune](https://github.com/lune-org/lune) as the
 
 The [Lynx](https://lynx.land) web framework for Lune is **3 times faster** than Express on Node.
 
+:::note
+Luau has made significant performance improvements compared to Lua, as previously discussed. How does Luau make your code go zoooom, though? They have [an excellent page](https://luau.org/performance) on their site discussing the technical details behind the compiler and interpreter which make this possible. I would highly recommend reading this, it's pretty fun!
+:::
+
 ![lynx benchmark](./lynx_bench.png "A benchmark of a Lynx webserver running on Lune")
 
 ### Libraries and Ecosystem
